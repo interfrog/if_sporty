@@ -1,0 +1,33 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<f:switch expression="{settings.templateLayout}">
+	<f:case value="1">
+		<div class="eventList startList">
+			<f:for each="{events}" as="event">
+				<f:render partial="List/Start" arguments="{_all}"/>
+			</f:for>
+		</div>
+	</f:case>
+	<f:case default="TRUE">
+	    <f:link.action action="list" controller="Event"><f:translate key="event.allEvents"/></f:link.action>
+	    <f:for each="{categories}" as="category">
+			<f:if condition="{overwriteDemand.category} == {category.uid}">
+				<f:then>
+					<f:link.action action="list" controller="Event" arguments="{overwriteDemand:{category: category}}" class="active">{category.title}</f:link.action>
+				</f:then>
+				<f:else>
+					<f:link.action action="list" controller="Event" arguments="{overwriteDemand:{category: category}}">{category.title}</f:link.action>
+				</f:else>
+			</f:if>
+	    </f:for>
+
+	    <!-- Output all events -->
+	    <f:for each="{events}" as="event">
+	        <f:render partial="Event/ListItem" arguments="{_all}"/>
+	    </f:for>
+	</f:case>
+</f:switch>
+
+</f:section>

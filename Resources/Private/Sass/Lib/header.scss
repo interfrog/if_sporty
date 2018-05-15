@@ -1,0 +1,122 @@
+#mainMenuWrap {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 5;
+  transition: all 0.4s ease-in-out;
+  transform: translateZ(0);
+  background-color: $headerbackground;
+  box-shadow: 0px 6px 0px 0px rgba(darken($headerbackground,10%),0.3);
+  opacity: 1;
+  visibility: visible;
+
+  @include breakpoint(#{$maxwidth + 150}px) {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+#mainMenuWrap, #regularHeader {
+  .innerWrap {
+    padding: 1.5em 0px;
+    @include breakpoint(#{$maxwidth + 150}px) {
+      padding: 3.75em 0;
+    }
+    z-index: 2;
+    transition: all 0.4s ease-in-out;
+  }
+
+  #logo {
+    display:inline-block;
+    vertical-align:middle;
+    margin-right: 3.75em;
+    transition: all 0.4s ease-in-out;
+
+    a {
+      display: block;
+    }
+    img {
+      display: block;
+      max-height: 3em;
+      @include breakpoint(#{$maxwidth + 150}px) {
+        max-height: 5em;
+      }
+      max-width: 100%;
+      width: auto;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+  }
+
+  &.small {
+    background-color: $headerbackground;
+    box-shadow: 0px 0px 10px 0px rgba(darken($headerbackground,10%),0.6);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) translateZ(0);
+    .innerWrap {
+      padding: 1.5em 0px;
+    }
+    #logo {
+      // a {
+      //   height: 2em;
+      // }
+    }
+  }
+}
+
+header {
+
+  &#regularHeader {
+    background-color: $headerbackground;
+  }
+
+  &#backgroundHeader {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      opacity: 0.8;
+      background-color: $headerbackground;
+    }
+  }
+
+
+  &#backgroundHeader .innerWrap {
+    padding: 10em 0 3.75em 0;
+    z-index: 2;
+  }
+
+  
+
+  .headSection {
+    margin-top: 3.75em;
+    .csc-default {
+      h1,h2,h3,h4,h5,p,ol,ul,li,strong,b {
+        color: $navtext;
+      }
+    }
+    .csc-textpic-image {
+      margin: 0px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{namespace n=GeorgRinger\News\ViewHelpers}
+<div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}" itemscope="itemscope" itemtype="http://schema.org/Article">
+	<n:excludeDisplayedNews newsItem="{newsItem}"/>
+	<span class="title">
+		<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+			<span itemprop="headline">{newsItem.title}</span>
+		</n:link>
+	</span>
+	<span class="news-list-date">
+		<time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+			<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+			<meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}" />
+		</time>
+	</span>
+</div>

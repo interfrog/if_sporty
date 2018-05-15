@@ -1,0 +1,99 @@
+/*** Global Variables ***/
+$absoluteExtPath: '/typo3conf/ext/if_sporty/';
+
+/*** FONT Variables ***/
+$generalfont: 'WaskNew',sans-serif;
+$h1font: 'WaskNew',sans-serif;
+$h2font: 'WaskNew',sans-serif;
+$h3font: 'WaskNew',sans-serif;
+$h4font: 'WaskNew',sans-serif;
+$h5font: 'WaskNew',sans-serif;
+$alternativefont: 'WolfInTheCity',serif;
+
+
+/*** Static Variables ***/
+$maxwidth: 1040;
+$fontsize: 18px;
+$fontweight: 400;
+$logowidth: 290;
+$logoheight: 45;
+$socialmenupid: 23;
+$h1style: normal;
+$h1weight: 600;
+$h2style: normal;
+$h2weight: 600;
+$h3style: normal;
+$h3weight: 600;
+$h4style: normal;
+$h4weight: 400;
+$h5style: normal;
+$h5weight: 400;
+$alternativestyle: normal;
+$alternativeweight: 400;
+
+
+/*** COLOR Variables ***/
+$pagebg: rgba(255,255,255,1);
+$defaulttext: rgba(26,79,140,1);
+$headerbackground: rgba(5,39,77,1);
+$navtext: rgba(255,255,255,1);
+$navtexthover: rgba(255,255,255,1);
+$navtextactive: rgba(255,255,255,1);
+$navslidecolor: rgba(210,73,73,1);
+$dropdowntext: rgba(210,73,73,1);
+$dropdowntexthover: rgba(26,79,140,1);
+$dropdowntextactive: rgba(26,79,140,1);
+$dropdownbackground: rgba(255,255,255,1);
+$dropdownbackgroundhover: rgba(236,237,237,1);
+$dropdownbackgroundactive: rgba(236,237,237,1);
+$breadcrumbtext: rgba(26,79,140,1);
+$breadcrumbtexthover: rgba(5,39,77,1);
+$breadcrumbtextcurrent: rgba(210,73,73,1);
+$breadcrumbtextlabel: rgba(177,179,180,1);
+$socialiconcolor: rgba(26,79,140,1);
+$socialiconhover: rgba(210,73,73,1);
+$submenubg: rgba(210,73,73,1);
+$submenuheadline: rgba(255,255,255,1);
+$submenuheadlinestrokes: rgba(26,79,140,1);
+$submenutext: rgba(255,255,255,1);
+$submenuhover: rgba(26,79,140,1);
+$submenustrokes: rgba(255,255,255,1);
+$offcanvasopener: rgba(210,73,73,1);
+$offcanvasbackground: rgba(5,39,77,1);
+$offcanvastext: rgba(255,255,255,1);
+$offcanvasactive: rgba(236,237,237,1);
+$footerlevel1: rgba(210,73,73,1);
+$footerlevel2: rgba(26,79,140,1);
+$footertext: rgba(177,179,180,1);
+$footerbackground: rgba(255,255,255,1);
+$h1: rgba(26,79,140,1);
+$h2: rgba(26,79,140,1);
+$h3: rgba(26,79,140,1);
+$h4: rgba(3,3,3,1);
+$h5: rgba(3,3,3,1);
+$formfieldbackground: rgba(255,255,255,1);
+$formtext: rgba(88,88,90,1);
+$formlabel: rgba(3,3,3,1);
+$formborder: rgba(236,237,237,1);
+$formborderfocus: rgba(210,73,73,1);
+$formbutton: rgba(210,73,73,1);
+$formbuttonhover: rgba(113,33,33,1);
+$link: rgba(210,73,73,1);
+$linkhover: rgba(5,39,77,1);
+$overlayboxtext: rgba(255,255,255,1);
+$overlayboxbackground: rgba(210,73,73,1);
+$divider: rgba(210,73,73,1);
+$contentbg: rgba(249,249,249,1);
+$teaserbg: rgba(249,249,249,1);
+$newsslidebg: rgba(249,249,249,1);
+$newsslideimagebg: rgba(249,249,249,1);
+$tableborder: rgba(198,199,200,1);
+$tablealternatedtext: rgba(88,88,90,1);
+$tablealternatedodd: rgba(217,218,219,1);
+$tablealternatedeven: rgba(236,237,237,1);
+$accopenerbackground: rgba(210,73,73,1);
+$accopenertext: rgba(255,255,255,1);
+$accopenerhover: rgba(123,124,126,1);
+$accfoldoutbackground: rgba(236,237,237,1);
+$accfoldouttext: rgba(62,61,64,1);
+$strokescolor: $defaulttext;

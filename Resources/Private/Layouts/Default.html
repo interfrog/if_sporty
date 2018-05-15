@@ -1,0 +1,24 @@
+<div id="siteWrapper" data-status="close">
+    <div id="siteCanvas">
+		<div class="row {f:if(condition:pageBackground,else:'hidden')}" id="mainMenuWrap">
+			<div class="innerWrap">
+				<div id="logo">
+					<f:format.raw>{logo}</f:format.raw>
+				</div>
+				<nav class="mainmenu">
+					<f:format.raw>
+						{mainMenu}
+					</f:format.raw>
+				</nav>
+				<a href="#" class="offCanvasOpener">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</a>
+			</div>
+		</div>
+		<f:render section="pageheader" />
+		<f:render section="pagecontent" />
+		<f:render section="pagefooter" />
+	</div>
+</div>

@@ -1,0 +1,38 @@
+{
+    "name": "interfrog/if_sporty",
+    "type": "typo3-cms-extension",
+    "version": "1.0.0",
+    "description": "distribution-package with themeconfiguration and template for associations, team pages and non governmental organisations",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "if_sporty"
+    ],
+    "homepage": "http://interfrog.de",
+    "authors": [{
+        "name": "Interfrog Produktion GmbH",
+        "role": "Developer",
+        "homepage": "http://interfrog.de"
+    }],
+    "license": [
+        "GPL-2.0+"
+    ],
+    "require": {
+        "typo3/cms-core": ">=6.2.12,<8.0"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Interfrog\\IfSporty\\": "Classes"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/Web"
+        }
+    }
+}

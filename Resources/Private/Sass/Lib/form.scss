@@ -1,0 +1,301 @@
+/**********************/
+/*** FORM STRUCTURE ***/
+/**********************/
+
+form > fieldset {
+	margin: 0.75em 0 1.5em 0;
+	@include breakpoint(600px) {
+		margin: 2em -2em 3em 0;
+	}
+}
+
+.formfield {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  
+  @include breakpoint(600px) {
+  	float: left;
+  	padding: 0 2em 1em 0;
+  }
+
+  label {
+  	display: block;
+  	padding: 0px 0px 0.5em 0px;
+  }
+}
+
+.width-25, .width-25-clear {
+	@include breakpoint(600px) {
+		width: 25%;
+	}
+}
+.width-33, .width-33-clear {
+	@include breakpoint(600px) {
+		width: 33.333333%;
+	}
+}
+.width-50, .width-50-clear {
+	@include breakpoint(600px) {
+		width: 50%;
+	}
+}
+.width-66, .width-66-clear {
+	@include breakpoint(600px) {
+		width: 66.666666%;
+	}
+}
+.width-75, .width-75-clear {
+	@include breakpoint(600px) {
+		width: 75%;
+	}
+}
+
+.width-100, .width-100-clear {
+	@include breakpoint(600px) {
+		width: 100%;
+	}
+}
+
+.width-25-clear,
+.width-33-clear,
+.width-50-clear,
+.width-66-clear,
+.width-75-clear,
+.width-100-clear {
+  clear: left;
+}
+
+.formfield[data-labelposition="left"]{
+  label,.label{
+    float: left;
+    width: 23%;
+  }
+  .field  {
+    float: right;
+    width: 75%;
+  }
+}
+
+.formfield[data-labelposition="right"]{
+  label,.label{
+    float: right;
+    width: 23%;
+  } 
+  .field{
+    float: left;
+    width: 75%;
+  }
+}
+
+/*********************/
+/*** FORM STYLINGS ***/
+/*********************/
+label, .powermail_label {
+	color: $formlabel;
+	cursor: pointer;
+	display: block;
+	font-family: $generalfont;
+	font-weight: bold;
+	line-height: 1.5em;
+	margin-bottom: 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="color"],
+textarea,
+select {
+	appearance: none;
+	-webkit-appearance: none;
+	border-radius: 0px;
+	background-color: $formfieldbackground;
+	font-family: $generalfont;
+	border: 2px solid $formfieldbackground;
+	//box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	// color: $defaulttext;
+	color: $formtext;
+	display: block;
+	font-size: 1em;
+	padding: 0.6125em 1em;
+	width: 100%;
+	box-sizing: border-box;
+	transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+
+	&:focus {
+		border: 2px solid $formborderfocus;
+		outline: 0px;
+	}
+}
+
+select {
+	height: auto;
+	padding: 0.75em 1em;
+}
+	
+input[type="submit"], button[type="submit"]{
+	appearance: none;
+	-webkit-appearance: none;
+    background-color: $formbutton;
+    color: white;
+    font-size: 1em;
+    font-family: $generalfont;
+    padding: 0.5em 2em;
+    border: 0px;
+    border-radius: 1.5em;
+    display: inline-block;
+    clear: both;
+    margin: 0 0 0 0;
+    transition: all 0.4s ease-in-out;
+    transform: scale(1);
+	cursor: pointer;
+	display: block;
+	float: none;
+	margin: 0px auto;
+
+	&:hover{
+		background-color:$formbuttonhover;
+	}
+	&:focus {
+		// border: 1px solid $formborderfocus;
+		outline: 0px;
+	}
+}
+
+#page #maincontent {
+	input[type="submit"],
+	button[type="submit"] {
+		margin: 0px auto 0px 0px;
+	}
+}
+
+
+
+input[type="radio"] {
+	display: none;
+}
+
+input[type="radio"] + label {
+	.status {
+		float:left;
+		position: relative;
+		width: 1.3em;
+		height: 1.3em;
+		border-radius: 50%;
+		border: 2px solid $formborder;
+		background-color: white;
+		line-height: 1em;
+		margin: 0 0.5em 0.15em 0;
+		text-align:center;
+	}
+}
+
+input[type="radio"]:checked + label {
+	.status{
+		border: 2px solid $formborder;
+		background: $formborderfocus;
+		background: -moz-radial-gradient(center, ellipse cover, $formborderfocus 0%, $formborderfocus 49%, #ffffff 55%, #ffffff 100%); /* FF3.6-15 */
+		background: -webkit-radial-gradient(center, ellipse cover, $formborderfocus 0%,$formborderfocus 49%,#ffffff 55%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+		background: radial-gradient(ellipse at center, $formborderfocus 0%,$formborderfocus 49%,#ffffff 55%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	}
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+input[type="checkbox"]  + label {
+	.status {
+		float: left;
+		position: relative;
+		width: 1.3em;
+		height: 1.3em;
+		border: 2px solid $formborder;
+		line-height: 1em;
+		margin: -0.15em 0.5em 0 0;
+		text-align: center;
+		background-color: white;
+		&:before {
+			@include fontAwesome();
+			color: $formborderfocus;
+			margin: .15em 0 0 0em;
+		}
+	}
+} 
+
+input[type="checkbox"]:checked + label {
+	.status{
+		border: 2px solid $formborder;
+		&:before {
+			content: "\f00c";
+		}
+	}
+}
+
+textarea {
+	height: auto !important;
+	resize: none;
+	padding: 1em;
+}
+	
+fieldset {
+	border: 0px;
+	legend {
+		display: none;
+	}
+	.powermail_radio_legend, .powermail_check_legend {
+		display: inherit;
+	}
+}
+
+.code_message {
+	list-style-type: none;
+	margin: 1.5em 0px;
+	padding: 0px;
+
+	li {
+		list-style-type: none;
+
+		h4 {
+			font-size: 1em;
+			font-weight: bold;
+			margin: 0px 0px 0px 0px;
+		}
+
+		&.alert {
+			border: 1px solid #a00404;
+			color: #a00404;
+			padding: 0.75em 1em 0.6em 1em;
+			background-color: #eecdcd;
+			display: inline-block;
+
+			h4 {
+				&:before {
+				    display: inline-block;
+					font: normal normal normal 14px/1 FontAwesome;
+					font-size: inherit;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					content: "\f071";
+					background-color: transparent;
+					color: #a00404;
+					margin: 0px 0.5em 0px 0px;
+				}
+				color: #a00404;
+			}
+			// display: inline-block;
+		}
+	}
+}

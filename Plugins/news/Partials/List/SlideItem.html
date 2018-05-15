@@ -1,0 +1,40 @@
+{namespace n=GeorgRinger\News\ViewHelpers}
+
+<div class="slideItem" itemscope="itemscope" itemtype="http://schema.org/Article">
+	<n:excludeDisplayedNews newsItem="{newsItem}"/>
+	<f:for each="{newsItem.falMedia}" as="mediaElement" iteration="mediaIndex">
+		<f:if condition="{mediaIndex.isFirst}">
+			<f:then>
+				<f:if condition="{mediaElement.originalResource.type} == 2">
+					<f:then>
+						<div class="imageWrap">
+							<div class="image" style="background-image: url({f:uri.image(src:'{mediaElement.uid}',treatIdAsReference:'1',maxWidth:'400')});">
+							</div>
+						</div>
+					</f:then>
+				</f:if>
+			</f:then>
+		</f:if>
+	</f:for>
+	<div class="textbox">
+		<span class="date">
+			<time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+				<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+				<meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}" />
+			</time>
+		</span>
+		<h3 class="newstitle">
+			<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+				<span itemprop="headline">{newsItem.title}</span>
+			</n:link>
+		</h3>
+		<f:if condition="{newsItem.teaser}">
+			<f:then>
+				{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+			</f:then>
+			<f:else>
+				{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+			</f:else>
+		</f:if>
+	</div>
+</div>

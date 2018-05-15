@@ -1,0 +1,38 @@
+.teaserBox {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background-color: $teaserbg;
+  box-shadow: 0 0 0px 0px rgba(0,0,0,.2);
+  transition: box-shadow 0.75s ease-in-out;
+
+  .image {
+    display: block;
+    position: relative;
+    padding: 0px 0px 56.25% 0px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: transform 3s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 0 20px 2px rgba(0,0,0,.2);
+
+    .image {
+      opacity: 1 !important;
+      transform: scale(1.1);
+    }
+  }
+
+  .textbox {
+    padding: 2em;
+    text-align: center;
+
+    p {
+      margin-bottom: 0px;
+    }
+  }
+}

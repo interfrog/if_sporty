@@ -1,0 +1,235 @@
+.tx-productmanager {
+  .products-square-list, .product-details {
+    form {
+      padding: 1em 0px;
+
+      input[type="text"] {
+        padding: 0.5em 1em;
+      }
+      input, button {
+        display: inline-block;
+        float: none;
+        font-size: 1em;
+      }
+
+      input[name="tx_productmanager_products[quantity]"] {
+        width: 8em;
+        border-radius: 2em;
+        padding: 0.5em 1em;
+      }
+      button[type="submit"],input[type="submit"] {
+        padding: 0.5em 0.75em;
+      }
+    }
+  }
+}
+
+.products-square-list {
+  .square {
+    float: left;
+    position: relative;
+    margin: 0px 0px 4% 0px;
+    background-color: rgb(240,240,240);
+    transition: all 0.5s ease-in-out;
+    transform: scale(1);
+    z-index: 1;
+
+    &:hover {
+      // box-shadow: 0px 0px 20px 0px rgba(66,66,66,0.7);
+      
+      cursor: pointer;
+      z-index: 2;
+
+      .image {
+        opacity: 1 !important;
+        transform: scale(1.1);
+      }
+    }
+
+    .imageWrap {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      background-color: darken(rgb(240,240,240),20%);
+    }
+
+    .image {
+      display: block;
+      position: relative;
+      height: 180px;
+      opacity: 0.6;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transition: opacity 0.5s ease-in-out, transform 3s ease-in-out;
+    }
+
+    .textbox {
+      padding: 2em;
+      text-align: center;
+
+      .newstitle {
+        min-height: 2.4em;
+      }
+
+      p {
+        margin-bottom: 0px;
+      }
+    }
+
+    form {
+      text-align: center;
+
+      input, button {
+        margin: 0px 0.25em;
+      }
+    }
+  }
+
+  .slick-prev, .slick-next {
+    display: none !important;
+  }
+}
+
+.product-details {
+  .image {
+    margin: -2em -2em 2em;
+    img {
+      max-width: 100%;
+    }
+  }
+  form {
+    text-align: left;
+
+    input, button {
+      margin: 0px 0.5em 0px 0px;
+    }
+  }
+}
+
+.product-basket {
+  table {
+    width: 100%;
+  }
+  table.alternatedtable {
+    margin: 0px 0px 2em 0px;
+  }
+  .price {
+    white-space: nowrap;
+  }
+
+  .order, .clearall {
+    font-size: 1em;
+    padding: .5em 1em;
+  }
+  .order {
+    float: right;
+  }
+}
+
+.product-order {
+  .formheader {
+    @include clearafter();
+    h4 {
+      float: left;
+    }
+  }
+  a.regular-button {
+    font-size: 1em;
+  }
+  input[type="submit"].next, a.regular-button.next {
+    float: right;
+    clear: none;
+  }
+
+  fieldset {
+    margin: 0.75em 0 1.5em 0 !important;
+    width: auto !important;
+    @include breakpoint(600px) {
+      margin: 2em -2em 3em 0 !important;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="email"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    input[type="color"],
+    select {
+      padding: 0.5em;
+    }
+
+    label {
+      font-weight: 300;
+    }
+
+    .radioItem,.checkItem {
+      display: inline-block;
+      padding: 0px 2em 0px 0px;
+    }
+  }
+
+  .addressblock {
+    .fa {
+      width: 1em;
+      text-align: center;
+      margin-right: 0.5em;
+    }
+  }
+
+  .summary {
+    margin: 2em 0px 0px 0px;
+
+    table {
+      width: 100%;
+      margin: 1.5em -5px 0px -5px;
+    }
+  }
+
+  .controls {
+    float: none;
+    display: block;
+    clear: both;
+    padding-top: 2em;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .products-square-list {
+    .square {
+      width: 31%;
+      margin-right: 3.5%;
+      margin-bottom: 3.5%;
+
+      &:nth-of-type(3n+3) {
+        margin-right: 0px;
+      }
+      &:nth-of-type(3n+1) {
+        clear: left;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 900px) {
+  .products-square-list {
+    .square {
+      width: 48%;
+      margin-right: 4%;
+
+      &:nth-of-type(2n+2) {
+        margin-right: 0px;
+      }
+      &:nth-of-type(2n+1) {
+        clear: left;
+      }
+    }
+  }
+}

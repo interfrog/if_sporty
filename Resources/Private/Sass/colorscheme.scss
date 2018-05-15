@@ -1,0 +1,68 @@
+/*** $identifier ***/
+*[data-colorsheme='$identifier'] {
+	background-color: $backgroundcolor;
+	color: $textcolor;
+	h1,h2,h3,h4,h5 {
+		color: $headercolor;
+	}
+	p,ol,ul,li,strong,b,span {
+		color: $textcolor;
+	}
+
+	&.csc-default {
+		h1,h2,h3,h4,h5 {
+			color: $headercolor;
+		}
+		p,ol,ul,li,strong,b,span {
+			color: $textcolor;
+		}
+	}
+
+
+	a {
+		color: $linkcolor;
+		&:hover, &:hover .fa {
+			color: $linkhovercolor;
+		}
+	}
+
+	.strokes {
+		&:before,&:after {
+			background-color: $strokescolor;
+		}
+	}
+
+	&.teaserBox {
+		background-color: $backgroundcolor;
+	}
+
+	.newsSlider .slideItem, .news-square-list .square {
+		background-color: $newsslidebg;
+
+		.imageWrap {
+			background-color: $newsslideimagebg;			
+		}
+
+		.image {
+			opacity: $newsslideimageopacity;
+		}
+	}
+
+	.newsSliderWrap {
+		.slickNav path {
+			fill: $newsslidebg;
+		}
+	}
+
+	.eventList.startList {
+		.date {
+			color: $linkhovercolor;
+		}
+	}
+
+	table.contenttable,table.alternatedtable {
+		td,th {
+			color: $textcolor;
+		}
+	}
+}

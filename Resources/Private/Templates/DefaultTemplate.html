@@ -1,0 +1,105 @@
+<f:layout name="Default" />
+<f:section name="pageheader">
+	<f:if condition="{pageBackground}">
+		<f:then>
+			<header id="backgroundHeader" class="row pageHeader" style="background-image: url(/{pageBackground});">
+				<div class="innerWrap">
+					<f:switch expression="{backendLayout}">
+						<f:case value="1-Col-Header">
+							<f:render partial="HeadSection" arguments="{_all}"/>
+						</f:case>
+						<f:case value="2-Col-Header">
+							<f:render partial="HeadSection" arguments="{_all}"/>
+						</f:case>
+					</f:switch>
+				</div>
+			</header>
+		</f:then>
+		<f:else>
+			<header id="regularHeader" class="row pageHeader">
+				<div class="innerWrap">
+					<div id="logo">
+						<f:format.raw>{logo}</f:format.raw>
+					</div>
+					<nav class="mainmenu">
+						<f:format.raw>
+							{mainMenu}
+						</f:format.raw>
+					</nav>
+					<a href="#" class="offCanvasOpener">
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</a>
+				</div>
+			</header>
+		</f:else>
+	</f:if>
+    <div class="offCanvasMenu">
+    	<div class="navWrap">
+	        <f:format.raw>
+	        	{offCanvas}
+	        </f:format.raw>
+	    </div>
+    </div>
+</f:section>
+
+<f:section name="pagecontent">
+    <f:switch expression="{backendLayout}">
+        <f:case value="2-Col-Header">
+			<f:render partial="TwoCols" arguments="{_all}"/>
+        </f:case>
+        <f:case value="2-Col">
+			<f:render partial="TwoCols" arguments="{_all}"/>
+        </f:case>
+        <f:case value="1-Col-Header">
+			<f:format.raw>
+            	{mainContentWrapped}
+            </f:format.raw>
+        </f:case>
+        <f:case default="TRUE">
+        	<f:render partial="Breadcrumb" arguments="{_all}"/>
+        	<f:format.raw>
+            	{mainContentWrapped}
+            </f:format.raw>
+        </f:case>
+    </f:switch>
+</f:section>
+
+<f:section name="pagefooter">
+	<footer id="pagefooter">
+		<div class="row regularPadding" id="seoNavi">
+			<div class="innerWrap align-center">
+				<h2 class="splitStroke"><f:format.raw>{pagetitle}</f:format.raw></h2>		
+				<f:format.raw>
+					{footerContent}
+				</f:format.raw>
+			</div>
+		</div>
+		<div class="row" id="socials">
+			<div class="innerWrap align-center">
+				<div class="splitStroke{f:if(condition:socialIconMenu,else:' noContent')}">
+					<f:format.raw>
+						{socialIconMenu}
+					</f:format.raw>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="copyrightRow" data-theme="{copyrighttheme}">
+			<div class="innerWrap align-center">
+				<f:format.raw>
+					{legalMenu}
+				</f:format.raw>
+				<p class="copyright">&copy; {year} Interfrog Distribution Package | </p>
+				<f:switch expression="{copyrighttheme}">
+					<f:case value="bright">
+						<p class="typo3">empowered by <a href="http://www.typo3.org" target="_blank"><img src="{absoluteImagePath}/typo3_grey.svg" onerror="this.onerror=null; this.src='{absoluteImagePath}/typo3_grey.png'"></img></a></p>
+					</f:case>
+					<f:case value="dark">
+						<p class="typo3">empowered by <a href="http://www.typo3.org" target="_blank"><img src="{absoluteImagePath}/typo3.svg" onerror="this.onerror=null; this.src='{absoluteImagePath}/typo3.png'"></img></a></p>
+					</f:case>
+				</f:switch>
+			</div>
+		</div>
+	</footer>
+</f:section>

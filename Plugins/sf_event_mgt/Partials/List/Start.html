@@ -1,0 +1,6 @@
+<p class="item">
+    <span class="date">
+        <f:format.date format="%d.%m.%Y">{event.startdate}</f:format.date>
+    </span>
+    <f:link.action action="detail" arguments="{event : event}" pageUid="{settings.detailPid}">{event.title}</f:link.action>
+</p>

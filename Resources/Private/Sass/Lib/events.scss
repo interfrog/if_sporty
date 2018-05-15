@@ -1,0 +1,39 @@
+.eventList {
+	&.startList {
+		.item {
+			display: inline-block;
+			width: 100%;
+			margin: 0 0 1.5em 0;
+			text-align: center;
+
+			&:nth-last-of-type(1) {
+				margin: 0 0 0 0;
+			}
+		}
+
+		.date {
+			display: block;
+		}
+
+		a {
+			font-size: 1.25em;
+			line-height: 1em;
+			font-weight: bold;
+		}
+	}
+}
+
+.eventfacts {
+	dd {
+		float: left;
+		clear: both;
+		width: 4.5em;
+		margin: 0 0.5em 0 0;
+	}
+
+	dt {
+		display: block;
+		overflow: hidden;
+		position: relative;
+	}
+}

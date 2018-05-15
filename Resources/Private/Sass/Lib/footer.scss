@@ -1,0 +1,196 @@
+html.stickyfooter {
+    #pagefooter {
+        position: absolute;
+        bottom: 0px;
+    }
+}
+
+
+.splitStroke {
+    display: inline-block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: relative;
+
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: 1920px;
+        background-color: $divider;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:before {
+        right: 100%;
+        margin-right: 20px;
+    }
+
+    &:after {
+        left: 100%;
+        margin-left: 20px;
+    }
+
+    &.noContent {
+        &:before,&:after {
+            margin: 0px;
+        }
+    }
+}
+
+#socials {
+    padding: 2em 0px 0px 0px;
+    @include breakpoint(600px) {
+        padding: 0px;
+    }
+    a {
+        display: inline-block;
+        vertical-align: middle;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-decoration: none;
+        vertical-align: middle;
+        color: $socialiconcolor;
+
+        span.fa {
+            font-size: 1.5em;
+            border-radius: 50%;
+            border: solid 4px $socialiconcolor;
+            transition: all .4s ease-in-out;
+            width: 50px;
+            padding: 11px 0;
+            margin: 0 3px;
+        }
+
+        &:hover {
+            span.fa {
+                color: $socialiconhover;
+                border-color: $socialiconhover;
+            }
+        }
+    }
+}
+
+
+#pagefooter {
+    background-color: $footerbackground;
+    width: 100%;
+    height: auto;
+
+    .innerWrap {
+        overflow: hidden;
+    }
+    
+    h1, h2, h3, h4, h5 {
+        font-family: $generalfont;
+        font-weight: bold;
+        margin: 0 0 0 0;
+    }
+    h1 a, h2 a, h3 a, h4 a, h5 a {
+        color: $footertext;
+        text-decoration: none;
+    }
+    p, ul, li {
+        font-size: 0.95em;
+    }
+    .csc-default ul.csc-menu {
+        list-style-type: none;
+    }
+    .csc-menu {
+        padding: 0;
+        @include breakpoint(600px) {
+            margin: 4em 0px 0px 0px;
+        }
+
+        ul,li {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        > li {
+            @include breakpoint(600px) {
+                display: inline-block;
+                vertical-align: top;
+                width: 33.3333%;
+            }
+            @include breakpoint(900px) {
+                width: 16.6666%;
+            }
+
+            > a {
+                text-decoration: none;
+                font-size: 1.5em;
+                font-style: italic;
+                color: $footerlevel1;
+            }                
+        }
+
+        .sublevel {
+            a {
+                font-size: 1.25em;
+                color: $footerlevel2;
+            }
+        }
+    }
+}
+
+#seoNavi {
+    display: none;
+    @include breakpoint(600px) {
+        display: inherit;
+    }
+}
+
+#copyrightRow {
+    padding: 1em 0px;
+    margin: 1em 0px 0px 0px;
+
+    @include breakpoint(600px) {
+        padding: 2em 0px;
+        margin: 2em 0px 0px 0px;
+    }
+	background-color: rgb(255,255,255);
+	color: rgb(166,166,166);
+
+    &[data-theme="bright"]{
+        background-color: rgb(255,255,255);
+        color: rgb(166,166,166);
+
+        .footerMenu a {
+            color: rgb(166,166,166);
+        }
+    }
+    &[data-theme="dark"]{
+        background-color: rgb(166,166,166);
+        color: rgb(246,246,246);
+
+        .footerMenu a {
+            color: rgb(246,246,246);
+        }
+    }
+	p {
+		font-size: 0.75em;
+        margin-bottom: 0px;
+	}
+
+    img {
+        height: 1.5em;
+        width: auto;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0.6em;
+    }
+    .copyright {
+        display: inline-block;
+        margin-top: 0.3em;
+    }
+    .typo3 {
+        display: inline-block;
+    }
+}

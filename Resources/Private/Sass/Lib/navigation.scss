@@ -1,0 +1,207 @@
+#mainMenuWrap, #regularHeader {
+  nav {
+		display: none;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 33.33%;
+		right: 0px;
+
+		@include breakpoint(#{$maxwidth + 150}px) {
+			display: inherit;
+		}
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li {
+        display: inline-block;
+        position: relative;
+        &:after {
+        	content: '';
+					position: absolute;
+					bottom: 0;
+					height: 2px;
+					left: 50%;
+					width: 0%;
+					background-color: $navslidecolor;
+					transition: all .2s ease-in-out;
+        }
+				&:hover:after {
+					content: '';
+					width: 100%;
+					transform: translateX(-50%);
+				}
+
+        a {
+          font-size: 1.3333333em;
+          font-weight: 500;
+          text-decoration: none;
+          display: block;
+          box-sizing: border-box;
+          color: $navtext;
+          line-height: 1.2em;
+          margin: 0px 1em;
+          padding: .3em 0;
+          &:hover {
+            color:$navtexthover;
+          }
+        }
+        &.active {
+        	a {
+        		color: $navtextactive;
+        	}
+					&:after {
+						content: '';
+						width: 100%;
+						transform: translateX(-50%);
+					}
+        }
+      }
+
+      &.submenu {
+      	//display: none;
+      	z-index: 10;
+      	position: absolute;
+      	background-color: $dropdownbackground;
+      	color: $dropdowntext;
+      	left: 50%;
+      	transform: translateX(-50%);
+      	box-shadow: 0 10px 0 -5px rgba(0,0,0,.4);
+
+      	li {
+					&.dropdown:after {
+						content: '';
+						height: 0;
+					}
+      		display: block;
+      		float: none;
+					&:hover:after {
+						content: none;
+					}
+      		a {
+      			text-align: center;
+      			padding: .5em 1.5em;
+      			color: $dropdowntext;
+      			transition: all .4s ease-in-out;
+      			display: block;
+      			margin: 0;
+      			white-space: nowrap;
+      			&:hover {
+      				color: $dropdowntexthover;
+      				background-color: $dropdownbackgroundhover;
+      			}
+
+      			&:active {
+      				color: $dropdowntextactive;
+      				background-color: $dropdownbackgroundactive;
+      			}
+      		}
+      	}
+      }
+    }
+  }
+}
+
+.subMenuWrap {
+	text-align: center;
+	background-color: $submenubg;
+	color: $submenutext;
+	padding: 2em;
+	margin: 0 0 2em 0;
+
+	h1,h2,h3,h4,h5,p,li {
+		a {
+			color: $submenutext;
+			&:hover {
+				color: $submenuhover;
+			}
+		}
+	}
+
+	h1,h2,h3,h4,h5 {
+		color: $submenuheadline;
+
+		a,a:hover {
+			color: $submenuheadline;
+		}
+
+		&:before,&:after {
+			background-color: $submenuheadlinestrokes;
+		}		
+	}
+
+	nav a {
+		font-size: 1.25em;
+		line-height: 1.4em;
+
+		&.strokes {
+			&:before,&:after {
+				background-color: $submenustrokes;
+				width: 1em;
+			}
+
+			&:hover {
+				&:before,&:after {
+					background-color: $submenuhover;
+				}
+			}
+		}
+	}
+
+	ul,li {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.breadcrumb {
+  margin: 0 0 0 0;
+  ul {
+    margin: 1em 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      padding: 0 0.5em 0 0;
+      font-style: italic;
+	  
+			&:nth-of-type(n+3):before {
+				content: "-";
+				display: inline-block;
+				margin: 0 0.5em 0 0;
+			}
+
+      a {
+        color: $breadcrumbtext;
+        text-decoration: none;
+
+        &:hover {
+        	color: $breadcrumbtexthover;
+        }
+      }
+      &.current {
+        font-weight: bold;
+        color: $breadcrumbtextcurrent;
+      }
+
+      &.label {
+      	color: $breadcrumbtextlabel;
+      }
+    }
+  }
+}
+
+.footerMenu {
+	ul {
+		padding: 0px;
+		margin: 0px 0px 0.5em 0px;
+		li {
+			display: inline-block;
+			margin: 0px 0.5em;
+		}
+	}
+	a {
+		color: $footertext;
+	}
+}

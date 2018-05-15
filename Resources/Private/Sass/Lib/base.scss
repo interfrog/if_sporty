@@ -1,0 +1,147 @@
+html.stickyfooter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  body, #siteWrapper, #siteCanvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+html,body {
+  background-color: $pagebg;
+}
+
+body {
+  font-size: $fontsize;
+  color: $defaulttext;
+  font-family: $generalfont;
+  font-weight: $fontweight;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+hr {
+  display: inline-block;
+  width: 100%;
+  margin: 4% 0;
+  border: 0px;
+  border-top: 1px solid $divider;
+}
+
+.divider {
+  display: block;
+  clear: both;
+}
+
+#maincontent > .csc-default {
+  clear: both;
+}
+
+img, object, embed, iframe {
+  width: 100%;
+}
+
+.csc-default img {
+  height: auto;
+}
+
+figure {
+  img {
+    max-width: 100%;
+  }
+  padding: 0;
+  margin: 0;
+}
+
+.innerWrap {
+  position: relative;
+  margin: 0 auto;
+  width:90%;
+  max-width: #{$maxwidth}px;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    clear: both;
+  }
+
+  &[data-fullwidth="true"] {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.row {
+  position: relative;
+  width: 100%;
+  // > * {
+  //   -webkit-transition: all 400ms ease-out;
+  //   -moz-transition: all 400ms ease-out;
+  //   -o-transition: all 400ms ease-out;
+  //   -ms-transition: all 400ms ease-out;
+  //   transition: all 400ms ease-out;
+  // }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    clear: both;
+  }
+
+  &.regularPadding {
+    padding: 3.75em 0px;
+  }
+}
+
+#page {
+  display: block;
+  clear: both;
+  padding-top: 2em;
+
+  #maincontent {
+    background-color: $contentbg;
+    padding: 2em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+  .col_1, .col_2, .col_3, .col_4, .col_5, .col_6, .col_7, .col_8, .col_9, .col_10, .col_11, .col_12 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 2%;
+    padding-left: 2%;
+    box-sizing: border-box;
+  }
+  .col_3 {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .hideOnDesktop {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hideOnMobile {
+    display: none;
+  }
+}
