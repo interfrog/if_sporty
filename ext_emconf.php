@@ -29,7 +29,7 @@ $EM_CONF[$_EXTKEY] = array(
 			'powermail' => '3.8.0-3.99.99',
 			'realurl' => '2.0.0-2.99.99',
 			'sf_event_mgt' => '2.0.0-2.99.99',
-			'if_themeconfiguration' => '3.0.1-3.99.99',
+			'if_themeconfiguration' => '1.0.0-1.99.99',
 		),
 		'conflicts' => array(
 			'fluid_styled_content' => ''
