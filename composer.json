@@ -1,7 +1,7 @@
 {
     "name": "interfrog/if_sporty",
     "type": "typo3-cms-extension",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "distribution-package with themeconfiguration and template for associations, team pages and non governmental organisations",
     "keywords": [
         "TYPO3",
