@@ -36,11 +36,11 @@
 		background-color: $backgroundcolor;
 	}
 
-	.newsSlider .slideItem, .news-square-list .square {
+	.newsSlider .slideItem, .news-square-list .square, .boxSlider .slideItem {
 		background-color: $newsslidebg;
 
-		.imageWrap {
-			background-color: $newsslideimagebg;			
+		.imageWrap, .teaserBox {
+			background-color: $newsslideimagebg;
 		}
 
 		.image {
@@ -48,7 +48,7 @@
 		}
 	}
 
-	.newsSliderWrap {
+	.newsSliderWrap, .boxSliderWrap {
 		.slickNav path {
 			fill: $newsslidebg;
 		}

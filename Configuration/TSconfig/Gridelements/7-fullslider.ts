@@ -1,6 +1,6 @@
 tx_gridelements.setup.fullslider {
-    title = Content-Element Slider
-    description = Erzeugt einen Slider aus Content-Elementen.
+    title = Fullscreen Slider
+    description = Erzeugt einen Slider aus Bild-Elementen.
     topLevelLayout = 1
     config {
         colCount = 1
