@@ -47,4 +47,11 @@ tt_content.gridelements_pi1.20.10.setup {
 			file = {$config.pluginPath}/gridelements/accordeon.html
 		}
 	}
+	boxslider < .twocolset
+	boxslider {
+		cObject {
+			file = {$config.pluginPath}/gridelements/boxSlider.html
+		}
+		columns.default.renderObj.stdWrap.outerWrap = <div class="slideItem">|</div>
+	}
 }
